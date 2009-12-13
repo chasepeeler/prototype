@@ -345,7 +345,8 @@ Form.Element.Methods = {
    *  Clears the contents of a text input. Returns the element.
   **/
   clear: function(element) {
-    $(element).value = '';
+    if($(element).readAttribute("type").toLowerCase() == "text")
+      $(element).value = '';
     return element;
   },
 
